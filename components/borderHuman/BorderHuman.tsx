@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 interface BorderHumanProps {
   el: ComponentType;
   color: string;
+  cn?: string;
 }
 
-export const BorderHuman: FC<BorderHumanProps> = ({ el: Element, color }) => {
+export const BorderHuman: FC<BorderHumanProps> = ({ el: Element, color, cn }) => {
   const humanAnimate = {
     hidden: {
       width: 0,
@@ -28,7 +29,7 @@ export const BorderHuman: FC<BorderHumanProps> = ({ el: Element, color }) => {
       viewport={{ once: true }}
       variants={humanAnimate}
       style={{ backgroundColor: `${color}` }}
-      className="rounded-[40px] inline-block overflow-hidden"
+      className={`rounded-[40px] inline-block overflow-hidden ${cn ? `${cn}` : ''}`}
     >
       <Element />
     </motion.div>

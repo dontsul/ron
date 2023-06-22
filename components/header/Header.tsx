@@ -12,7 +12,9 @@ export const Header = () => {
           <Logo />
           <Menu />
         </div>
-        <Button outline={true} bg={false} content="Get Free Estimate" />
+        <Button outline={true} bg={false} animate={true} cn="bg-[#fafafa] bg-opacity-90">
+          Get Free Estimate
+        </Button>
       </div>
     </header>
   );

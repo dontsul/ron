@@ -1,44 +1,55 @@
 'use client';
-import { useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Title } from '../title/Title';
-import { motion, useInView, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { motion, useInView, useAnimate } from 'framer-motion';
 import { HumansBlock } from '../humansBlock/HumansBlock';
 
 export const FightingSection = () => {
-  const titleAnimation = {
-    hidden: {
-      scale: 1,
-    },
-    visible: {
-      scale: 0.5,
-    },
-  };
+  const [isElementInCenter, setIsElementInCenter] = useState(false);
 
-  const { scrollY } = useScroll();
-  console.log(scrollY);
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
 
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start start', 'end end'],
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      const elementRect = document?.getElementById('wrapTitle')?.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
 
-  const scaleX = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-  const scaleY = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+      if (elementRect !== undefined) {
+        if (elementRect.top <= viewportHeight / 2 && elementRect.bottom >= viewportHeight / 2) {
+          setIsElementInCenter(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isInView && isElementInCenter) {
+      animate(
+        scope.current,
+        {
+          scale: 0.7,
+        },
+        { duration: 2 }
+      );
+    }
+  }, [isInView, scope, animate, isElementInCenter]);
 
   return (
     <section className="">
-      <motion.div style={{ scaleX, scaleY }} ref={targetRef}>
+      <motion.div id="wrapTitle" ref={scope}>
         <Title cn="text-center mb-[60px]" tag="h2">
           What are we fighting against?
         </Title>
       </motion.div>
 
-      <p
-        ref={targetRef}
-        className="font-normal text-[32px] leading-[48px] text-center text-[rgba(0,0,0,0.7)] mb-[210px]"
-      >
+      <p className="font-normal text-[32px] leading-[48px] text-center text-[rgba(0,0,0,0.7)] mb-[210px]">
         Users do not use my design or project
       </p>
       <HumansBlock />

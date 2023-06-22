@@ -9,10 +9,8 @@ interface SingleHumanProps {
 
 export const SingleHuman: FC<SingleHumanProps> = ({ image, title }) => {
   return (
-    <div>
-      <div>
-        <Image src={image} alt={title} height={712} width={500} />
-      </div>
-    </div>
+    <>
+      <Image src={image} alt={title} height={712} width={500} />
+    </>
   );
 };

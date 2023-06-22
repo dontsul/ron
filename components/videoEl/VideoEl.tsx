@@ -9,7 +9,7 @@ export const VideoEl = () => {
       scale: 1,
     },
     visible: {
-      scale: 1.15,
+      scale: 1.1,
       transition: {
         delay: 0.2,
         duration: 1,

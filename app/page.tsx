@@ -7,6 +7,8 @@ import { OftenWorkSection } from '@/components/oftenWorkSection/OftenWorkSection
 import { DesignSection } from '@/components/designSection/DesignSection';
 import { NextSection } from '@/components/nextSection/NextSection';
 import { TalkSection } from '@/components/talkSection/TalkSection';
+import { InsightsSection } from '@/components/insightsSection/InsightsSection';
+import { Footer } from '@/components/footer/Footer';
 
 export default function Home() {
   return (
@@ -20,7 +22,9 @@ export default function Home() {
         <DesignSection />
         <NextSection />
         <TalkSection />
+        <InsightsSection />
       </main>
+      <Footer />
     </div>
   );
 }
