@@ -7,7 +7,6 @@ import Arrow from '../../public/svg/Arrow.svg';
 
 export const WorkBlock = () => {
   return (
-    // <div className="flex items-start justify-center px-[80px] py-[100px] rounded-[30px] bg-white mb-[10px]">
     <div className="pb-[320px]">
       <div className="grid grid-cols-2 px-[80px] py-[100px] rounded-[30px] bg-white mb-[10px]">
         <div className="">

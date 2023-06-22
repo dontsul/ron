@@ -2,8 +2,6 @@
 
 import { Title } from '../title/Title';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import brief from '@/public/images/brief.png';
 import { motion, useAnimate, useInView } from 'framer-motion';
 import { NextElements } from '../nextElements/NextElements';
 

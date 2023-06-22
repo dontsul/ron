@@ -11,7 +11,6 @@ import Samsung from '../../public/svg/samsung.svg';
 import Vessel from '../../public/svg/vessel.svg';
 import Man from '../../public/svg/man.svg';
 import { BorderHuman } from '../borderHuman/BorderHuman';
-import { motion } from 'framer-motion';
 
 const companies = [
   { title: 'Samsung,', el: Samsung, color: '#1428A0' },

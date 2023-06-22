@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ReactElement, ComponentType, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 interface ButtonProps {

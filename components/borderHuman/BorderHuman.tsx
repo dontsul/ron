@@ -15,8 +15,7 @@ export const BorderHuman: FC<BorderHumanProps> = ({ el: Element, color, cn }) =>
     visible: {
       width: 'auto',
       transition: {
-        delay: 0.2,
-        duration: 1,
+        duration: 1.2,
         ease: 'easeOut',
       },
     },

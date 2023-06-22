@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from 'next/image';
-import NextImageType from 'next/image';
 import { FC } from 'react';
 
 interface SingleHumanProps {

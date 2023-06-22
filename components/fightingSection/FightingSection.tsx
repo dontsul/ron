@@ -42,7 +42,7 @@ export const FightingSection = () => {
   }, [isInView, scope, animate, isElementInCenter]);
 
   return (
-    <section className="">
+    <section className="mb-[668px]">
       <motion.div id="wrapTitle" ref={scope}>
         <Title cn="text-center mb-[60px]" tag="h2">
           What are we fighting against?

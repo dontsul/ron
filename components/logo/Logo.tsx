@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import LogoImg from '../../public/svg/logo.svg';
 
 export const Logo = () => {
