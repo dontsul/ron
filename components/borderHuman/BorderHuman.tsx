@@ -1,13 +1,15 @@
 import { FC, ComponentType } from 'react';
 import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
 
 interface BorderHumanProps {
-  el: ComponentType;
+  el?: ComponentType;
   color: string;
   cn?: string;
+  image?: StaticImageData;
 }
 
-export const BorderHuman: FC<BorderHumanProps> = ({ el: Element, color, cn }) => {
+export const BorderHuman: FC<BorderHumanProps> = ({ el: Element, color, cn, image }) => {
   const humanAnimate = {
     hidden: {
       width: 0,
@@ -30,7 +32,8 @@ export const BorderHuman: FC<BorderHumanProps> = ({ el: Element, color, cn }) =>
       style={{ backgroundColor: `${color}` }}
       className={`rounded-[40px] inline-block overflow-hidden ${cn ? `${cn}` : ''}`}
     >
-      <Element />
+      {Element && <Element />}
+      {image && <Image src={image} alt="human" width={200} height={100} />}
     </motion.div>
   );
 };

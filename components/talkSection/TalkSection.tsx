@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { Title } from '../title/Title';
 import { BorderHuman } from '../borderHuman/BorderHuman';
-import Woman from '@/public/svg/woman.svg';
+// import Woman from '@/public/svg/woman.svg';
+import woman from '@/public/images/woman.png';
 
 export const TalkSection = () => {
   const ref = useRef<SVGSVGElement>(null);
@@ -31,7 +32,8 @@ export const TalkSection = () => {
       </div>
       <div className="flex flex-wrap items-center">
         <Title tag="h2" cn="leading-[130%] flex flex-wrap items-center">
-          Let’s talk {<BorderHuman el={Woman} color="#FFE99D" cn="mx-[12px]" />} your next project
+          Let’s talk {<BorderHuman color="#FFE99D" cn="mx-[12px]" image={woman} />} your next
+          project
           <motion.button
             whileHover={{
               backgroundColor: '#000000',
