@@ -1,9 +1,7 @@
-'use client';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { Title } from '../title/Title';
 import { BorderHuman } from '../borderHuman/BorderHuman';
-// import Woman from '@/public/svg/woman.svg';
 import woman from '@/public/images/woman.png';
 
 export const TalkSection = () => {
