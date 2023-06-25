@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Urbanist', sans-serif;
   background-color: #fafafa;
-  color: rgb(var(--foreground-rgb));
 }
 .container {
   width: 83%;
